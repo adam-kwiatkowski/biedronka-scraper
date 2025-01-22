@@ -1,10 +1,14 @@
 import json
 
-from biedronka.api import BiedronkaAPI
+from biedronka import BiedronkaAPI
 
 if __name__ == "__main__":
-    with open("config.json") as f:
-        config = json.load(f)
+    try:
+        with open("config.json") as f:
+            config = json.load(f)
+    except FileNotFoundError:
+        print("Please create a config.json file with a token.")
+        exit(1)
 
     api = BiedronkaAPI(token=config.get("token"))
 

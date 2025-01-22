@@ -54,3 +54,21 @@ class ProductStock(NamedTuple):
     distance: int
     city: str
     street: str
+
+
+class AuthToken(NamedTuple):
+    """
+    Represents an authentication token.
+
+    Attributes:
+        access_token (str): Access token
+        expires_in (int): Time in seconds until token expiration
+        refresh_token (str): Refresh token
+        refresh_expires_in (int): Time in seconds until refresh token expiration
+        session_state (str): Session state
+    """
+    access_token: str
+    expires_in: int
+    refresh_token: str
+    refresh_expires_in: int
+    session_state: str
